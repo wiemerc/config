@@ -10,3 +10,4 @@ set smarttab
 set number
 set wildmode=longest,list,full
 set wildmenu
+set ruler
