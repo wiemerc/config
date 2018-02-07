@@ -5,9 +5,6 @@ PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
 export PAGER=less
 export EDITOR=vi
-export http_proxy=http://proxy.arri.de:8888
-export https_proxy=http://proxy.arri.de:8888
-export no_proxy=localhost,127.0.0.1,.arri.de
 
 # some aliases
 alias ll="ls -lG"
@@ -19,6 +16,3 @@ alias cd-="popd > /dev/null"
 
 # some other settings
 shopt -s extglob
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-  . /opt/local/etc/profile.d/bash_completion.sh
-fi
