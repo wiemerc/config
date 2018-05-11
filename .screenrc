@@ -1,2 +1,5 @@
 escape ^Jj
+scrollback 5000
+termcapinfo xterm ti@:te@
+vbell off
 
