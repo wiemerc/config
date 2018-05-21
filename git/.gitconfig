@@ -1,0 +1,5 @@
+[user]
+	email = constantin.wiemer@gmx.de
+	name = Constantin Wiemer
+[core]
+	excludesfile = /Users/consi/.gitignore_global
