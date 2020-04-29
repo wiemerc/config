@@ -11,6 +11,7 @@ set number
 set wildmode=longest,list,full
 set wildmenu
 set ruler
+nnoremap <C-t> :tabedit 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
-set cindent cinkeys-=0#
+set encoding=utf-8
