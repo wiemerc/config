@@ -3,3 +3,9 @@
 	name = Constantin Wiemer
 [core]
 	excludesfile = /Users/consi/.gitignore_global
+[alias]
+	unstage = reset HEAD --
+	discard = checkout --
+	co = checkout
+	ci = commit
+	last = log -1 HEAD
