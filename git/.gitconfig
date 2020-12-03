@@ -9,3 +9,6 @@
 	co = checkout
 	ci = commit
 	last = log -1 HEAD
+    st = status
+    fixup = commit --amend --no-edit
+    ll = log --format='format:%Cred%h %Cgreen%ci %Cblue%an %Creset%s'
