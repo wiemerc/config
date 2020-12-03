@@ -2,7 +2,7 @@
 	email = constantin.wiemer@gmx.de
 	name = Constantin Wiemer
 [core]
-	excludesfile = /Users/consi/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
 	unstage = reset HEAD --
 	discard = checkout --
