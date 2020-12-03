@@ -5,7 +5,7 @@ PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
 export PAGER='less -R'
 export EDITOR=vi
-export LC_ALL=C
+export LC_ALL=en_US.UTF-8
 
 # some aliases
 alias ll="ls -lG"
