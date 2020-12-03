@@ -18,6 +18,8 @@ alias cd+="pushd > /dev/null"
 alias cd-="popd > /dev/null"
 alias grep="grep --color=auto"
 alias stripcr="perl -pi -e 's/\r//g'"
+alias git-unlock="gpg -d --batch ~/.netrc.gpg > /dev/null 2>&1"
+alias export-creds='eval $(gpg -d --batch ~/credentials.sh.gpg 2> /dev/null)'
 
 
 # some other settings
