@@ -12,3 +12,5 @@
     st = status
     fixup = commit --amend --no-edit
     ll = log --format='format:%Cred%h %Cgreen%ci %Cblue%an %Creset%s'
+[credential]
+    helper = osxkeychain
