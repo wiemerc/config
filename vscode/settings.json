@@ -1,0 +1,45 @@
+{
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.cursorStyle": "line",
+  "editor.detectIndentation": false,
+  "editor.fontSize": 13,
+  "editor.lineNumbers": "on",
+  "editor.minimap.enabled": false,
+  "editor.rulers": [
+    120
+  ],
+  "editor.wordSeparators": "/\\()\"':,.;\u003c\u003e~!@#$%^\u0026*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "files.associations": {
+    "Jenkinsfile*": "groovy"
+  },
+  "git.ignoreWindowsGit27Warning": true,
+  "git.untrackedChanges": "separate",
+  "problems.showCurrentInStatus": true,
+  "python.languageServer": "Pylance",
+  "remote.SSH.localServerDownload": "always",
+  "remote.SSH.showLoginTerminal": true,
+  "remote.SSH.useLocalServer": false,
+  "remote.downloadExtensionsLocally": true,
+  "spellright.documentTypes": [
+    "markdown",
+    "latex"
+  ],
+  "spellright.language": [
+    "en",
+    "de"
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-d>": true,
+    "<C-f>": false,
+    "<C-n>": false,
+    "<C-w>": false
+  },
+  "vim.vimrc.enable": true,
+  "window.zoomLevel": 1,
+  "workbench.activityBar.visible": true,
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.editor.wrapTabs": true,
+  "workbench.startupEditor": "none"
+}
