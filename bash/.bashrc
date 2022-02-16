@@ -7,9 +7,10 @@ export PAGER='less -R'
 export EDITOR=vi
 export LC_ALL=en_US.UTF-8
 
+
 # some aliases
-alias ll="ls -lG"
-alias lt="ls -lrtG"
+alias ll="ls -l"
+alias lt="ls -lrt"
 alias lsz="ls -l | sort -n -k 5"
 alias cd+="pushd > /dev/null"
 alias cd-="popd > /dev/null"
