@@ -12,6 +12,7 @@ export LC_ALL=en_US.UTF-8
 alias ll="ls -l"
 alias lt="ls -lrt"
 alias lsz="ls -l | sort -n -k 5"
+alias kc="kubectl"
 alias cd+="pushd > /dev/null"
 alias cd-="popd > /dev/null"
 alias grep="grep --color=auto"
