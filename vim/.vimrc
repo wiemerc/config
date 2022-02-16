@@ -14,4 +14,5 @@ set ruler
 nnoremap <C-t> :tabedit 
 nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
+vnoremap p "_dP
 set encoding=utf-8
