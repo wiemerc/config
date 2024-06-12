@@ -1,45 +1,59 @@
 {
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.cursorStyle": "line",
-  "editor.detectIndentation": false,
-  "editor.fontSize": 13,
-  "editor.lineNumbers": "on",
-  "editor.minimap.enabled": false,
-  "editor.rulers": [
-    120
-  ],
-  "editor.wordSeparators": "/\\()\"':,.;\u003c\u003e~!@#$%^\u0026*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  "files.associations": {
-    "Jenkinsfile*": "groovy"
-  },
-  "git.ignoreWindowsGit27Warning": true,
-  "git.untrackedChanges": "separate",
-  "problems.showCurrentInStatus": true,
-  "python.languageServer": "Pylance",
-  "remote.SSH.localServerDownload": "always",
-  "remote.SSH.showLoginTerminal": true,
-  "remote.SSH.useLocalServer": false,
-  "remote.downloadExtensionsLocally": true,
-  "spellright.documentTypes": [
-    "markdown",
-    "latex"
-  ],
-  "spellright.language": [
-    "en",
-    "de"
-  ],
-  "vim.handleKeys": {
-    "<C-a>": false,
-    "<C-d>": true,
-    "<C-f>": false,
-    "<C-n>": false,
-    "<C-w>": false
-  },
-  "vim.vimrc.enable": true,
-  "window.zoomLevel": 1,
-  "workbench.activityBar.visible": true,
-  "workbench.colorTheme": "Solarized Dark",
-  "workbench.editor.wrapTabs": true,
-  "workbench.startupEditor": "none"
+    "[groovy]": {
+        "editor.tabSize": 2
+    },
+    "[python]": {
+        "editor.formatOnType": true
+    },
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.accessibilitySupport": "off",
+    "editor.cursorStyle": "line",
+    "editor.detectIndentation": false,
+    "editor.fontSize": 14,
+    "editor.guides.bracketPairs": "active",
+    "editor.lineNumbers": "on",
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "none",
+    "editor.rulers": [
+        130
+    ],
+    "editor.tabSize": 4,
+    "editor.wordSeparators": "/\\()\"':,.;\u003c\u003e~!@#$%^\u0026*|+=[]{}`?-",
+    "editor.wordWrap": "off",
+    "extensions.ignoreRecommendations": true,
+    "files.associations": {
+        "Jenkinsfile*": "groovy"
+    },
+    "git.ignoreWindowsGit27Warning": true,
+    "git.untrackedChanges": "separate",
+    "problems.showCurrentInStatus": true,
+    "python.languageServer": "Pylance",
+    "remote.downloadExtensionsLocally": true,
+    "remote.SSH.localServerDownload": "off",
+    "remote.SSH.remotePlatform": {
+        "admin1.azd-fcp-e2em-lab-dev.ec1.aws.aztec.cloud.allianz": "linux",
+        "debian": "linux"
+    },
+    "remote.SSH.showLoginTerminal": true,
+    "remote.SSH.useLocalServer": false,
+    "spellright.documentTypes": [
+        "markdown",
+        "latex"
+    ],
+    "spellright.language": [
+        "en",
+        "de"
+    ],
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-d>": true,
+        "<C-f>": false,
+        "<C-n>": false,
+        "<C-w>": false
+    },
+    "vim.vimrc.enable": true,
+    "workbench.colorTheme": "Quiet Light",
+    "workbench.editor.wrapTabs": true,
+    "workbench.startupEditor": "none",
+    "workbench.tree.indent": 24
 }
