@@ -6,6 +6,7 @@ PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 export PAGER='less -R'
 export EDITOR=vi
 export LC_ALL=en_US.UTF-8
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 
 # some aliases
