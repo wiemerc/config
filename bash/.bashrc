@@ -27,3 +27,8 @@ get_git_branch() {
     echo $(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3-)
 }
 
+
+kube_tail() {
+    kubectl logs -f --ignore-errors -l app="$1"
+}
+
