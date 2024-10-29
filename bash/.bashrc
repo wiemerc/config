@@ -1,5 +1,5 @@
 # environment variables
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[00;33m\]\w\[\033[00m\] ($(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3-)) \$ '
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[00;33m\]\w\[\033[00m\] ($(get_git_branch)) \$ '
 PROMPT_COMMAND='RC=$?; echo "$(date "+%Y-%m-%d %H:%M:%S") $$ $PWD $RC $(history 1)" >> ~/log/bash-history-$(date "+%Y-%m-%d").log'
 PATH=/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
@@ -18,5 +18,12 @@ alias cd-="popd > /dev/null"
 alias grep="grep --color=auto"
 alias stripcr="perl -pi -e 's/\r//g'"
 
+
 # some other settings
 shopt -s extglob
+
+
+get_git_branch() {
+    echo $(git symbolic-ref HEAD 2> /dev/null | cut -d'/' -f3-)
+}
+
