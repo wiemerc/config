@@ -32,3 +32,8 @@ kube_tail() {
     kubectl logs -f --ignore-errors -l app="$1"
 }
 
+
+cwcurl() {
+    curl -v --no-progress-meter -o /dev/null $@ 2>&1 | grep -Pv '^[{}]' | colout '^>.+' '#258209' | colout '^<.+' '#094682' | colout '^\*.+' blue
+}
+
