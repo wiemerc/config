@@ -110,11 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-setopt HIST_IGNORE_DUPS
-setopt HIST_IGNORE_SPACE
-HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
-source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
-autoload -Uz add-zsh-hook
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+source ~/.zshrc.local
+
