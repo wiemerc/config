@@ -77,7 +77,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,14 +110,11 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-function append_cmd_to_history() {
-    local LAST_EXIT_CODE=$?
-    local LAST_COMMAND=$(history | tail -1)
-    echo "$(date "+%Y-%m-%d %H:%M:%S") $PWD $LAST_EXIT_CODE $LAST_COMMAND" >> ~/log/zsh-history/$(date "+%Y-%m-%d").log
-}
-
-typeset -a precmd_functions
-precmd_functions+=(append_cmd_to_history)
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
+source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
+autoload -Uz add-zsh-hook
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
