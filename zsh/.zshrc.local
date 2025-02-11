@@ -5,3 +5,8 @@ HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
 source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
 
+# make Ctrl-W behave like in bash
+WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
+autoload -Uz select-word-style
+select-word-style bash
+
