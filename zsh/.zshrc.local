@@ -1,3 +1,6 @@
+export LC_ALL=en_US.UTF-8
+export LESS='-F -R'
+
 # set up long-term history using the histdb plugin
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
