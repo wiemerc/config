@@ -19,3 +19,10 @@ WORDCHARS='*?_-.[]~=/&;!#$%^(){}<>'
 autoload -Uz select-word-style
 select-word-style bash
 
+# add auto-completions provided by Homebrew on a Mac
+if type brew &>/dev/null; then
+    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    autoload -Uz compinit
+    compinit
+fi
+
