@@ -2,6 +2,8 @@ export EDITOR=vim
 export LC_ALL=en_US.UTF-8
 export LESS='-F -R'
 export PAGER='less -F -R'
+export PATH=/home/og6xk9f/bin:$PATH
+export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 
 # don't share history between sessions
 unsetopt share_history
@@ -12,7 +14,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={a-z}'
 # set up long-term history using the histdb plugin
 setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_SPACE
-HISTDB_TABULATE_CMD=(sed -e $'s/\x1f/\t/g')
 source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
 
@@ -27,4 +28,19 @@ if type brew &>/dev/null; then
     autoload -Uz compinit
     compinit
 fi
+
+# some Allianz-specific aliases
+alias git-unlock="gpg -d --batch ~/.netrc.gpg > /dev/null 2>&1"
+alias export-creds='eval $(gpg -d --batch ~/credentials.sh.gpg 2> /dev/null)'
+alias fcp-lab-dev-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube'
+alias fcp-lab-dev-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-tra'
+alias fcp-lab-dev-int-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-par'
+alias fcp-lab-dev-tra-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-tra-par'
+alias fcp-dev-dev-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-dev-dev-kube'
+alias fcp-dev-dev-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-dev-dev-kube-tra'
+alias fcp-prod-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube'
+alias fcp-prod-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra'
+alias fcp-prod-int-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-par'
+alias fcp-prod-tra-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra-par'
+alias kc=kubectl
 
