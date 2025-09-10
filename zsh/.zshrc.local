@@ -23,3 +23,6 @@ if type brew &>/dev/null; then
     compinit
 fi
 
+# some aliases
+alias git-unlock='gpg -d --batch ~/.netrc.gpg > /dev/null 2>&1'
+alias export-creds='eval $(gpg -d --batch ~/credentials.sh.gpg 2> /dev/null)'
