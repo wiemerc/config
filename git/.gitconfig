@@ -14,6 +14,8 @@
     st = status
     fixup = commit --amend --no-edit
     ll = log --format='format:%Cred%h %Cgreen%ci %Cblue%an %Creset%s'
+[advice]
+    skippedCherryPicks = false
 [credential]
     helper = osxkeychain
 [delta]
