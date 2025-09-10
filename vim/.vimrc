@@ -16,3 +16,4 @@ nnoremap <C-Left> :tabprevious<CR>
 nnoremap <C-Right> :tabnext<CR>
 vnoremap p "_dP
 set encoding=utf-8
+set mouse-=a
