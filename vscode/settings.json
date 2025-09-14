@@ -61,4 +61,5 @@
     "cSpell.enabledFileTypes": {
         "asciidoc": true
     }
+    "git.openRepositoryInParentFolders": "never"
 }
