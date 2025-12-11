@@ -60,6 +60,10 @@
     "clangd.detectExtensionConflicts": false,
     "cSpell.enabledFileTypes": {
         "asciidoc": true
+    },
+    "cSpell.maxNumberOfProblems": 1000,
+    "git.openRepositoryInParentFolders": "never",
+    "github.copilot.enable": {
+        "*": false
     }
-    "git.openRepositoryInParentFolders": "never"
 }
