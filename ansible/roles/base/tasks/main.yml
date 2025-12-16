@@ -1,0 +1,77 @@
+
+---
+- name: Install basic packages
+  ansible.builtin.package:
+    name: "{{ item }}"
+  loop:
+    - bind-utils  # dig
+    - git  # must be installed before, just for documentation
+    - jq
+    - netcat
+    - python3-pip  # must be installed before, just for documentation
+    - sqlite  # for ZSH history
+    - vim
+    - wireshark-cli  # tshark
+    - zsh
+    # podman or docker.io
+    # TODO: Should we install the ones below in the 'allianz' role?
+    # kubectl
+    # helm
+    # k9s
+    # restic
+    # awscli2
+
+- name: Install basic Python modules for the user
+  become: false
+  ansible.builtin.pip:
+    name: "{{ item }}"
+  loop:
+    - ansible  # must be installed before, just for documentation
+    - colout
+    - jc
+    - loguru
+    - requests
+
+- name: Set zsh as shell
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/zsh
+
+  # TODO: Install plugins and configure ZSH
+  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+  # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  # git clone https://github.com/larkery/zsh-histdb $HOME/.oh-my-zsh/custom/plugins/zsh-histdb
+- name: Create links to config files for ZSH
+  ansible.builtin.file:
+    src: /home/{{ ansible_user }}/config/zsh/{{ item }}
+    dest: /home/{{ ansible_user }}/{{ item }}
+    state: link
+    force: true
+  loop:
+    - .zprofile
+    - .zshrc
+    - .zshrc.local
+  # manual: `p10k configure` or `exec zsh`
+
+  # TODO: Create a generic task for all config files
+- name: Create link for ~/.gitconfig
+  ansible.builtin.file:
+    src: /home/{{ ansible_user }}/config/git/{{ item }}
+    dest: /home/{{ ansible_user }}/{{ item }}
+    state: link
+    force: true
+  loop:
+    - .gitconfig
+    - .gitignore_global
+
+- name: Install yq
+  become: false
+  ansible.builtin.get_url:
+    url: https://github.com/mikefarah/yq/releases/download/v4.50.1/yq_linux_amd64
+    dest: /home/{{ ansible_user }}/.local/bin/yq
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0755
+
+  # TODO: add alias 'cwcurl'
