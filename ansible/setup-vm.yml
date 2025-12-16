@@ -1,0 +1,36 @@
+- name: Set up a Linux VM for personal use
+  hosts: all
+  remote_user: consti
+  become: true
+  tasks:
+    - name: Install necessary packages
+      with_items:
+        - dig
+        - docker.io
+        - git
+        - jq
+        - netcat-openbsd
+        - python3-pip
+        - tshark
+        - vim
+        - zsh
+      ansible.builtin.package:
+        name: '{{ item }}'
+        state: present
+
+    # TODO: Configure zsh
+
+    # - name: Install necessary Python modules as user
+    #   with_items:
+    #     - loguru
+    #     - scapy
+
+    # - name: Install yq
+    #   ansible.builtin.get_url:
+    #     url: https://github.com/mikefarah/yq/releases/download/v4.42.1/yq_linux_amd64
+    #     dest: /usr/local/bin/yq
+    #     owner: root
+    #     group: root
+    #     mode: 0755
+
+    # TODO: Install colout and add alias 'cwcurl'
