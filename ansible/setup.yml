@@ -1,0 +1,11 @@
+- name: Set up a (Fedora) Linux VM for personal use
+  hosts: all
+  become: true
+  tasks:
+    - name: Execute roles defined for the group the host is a member of
+      ansible.builtin.include_role:
+        role: '{{ group_role }}'
+      loop: "{{ group_roles }}"
+      loop_control:
+        loop_var: group_role
+
