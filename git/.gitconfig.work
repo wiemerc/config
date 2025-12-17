@@ -1,0 +1,25 @@
+[user]
+	email = constantin.wiemer@allianz.de
+	name = Constantin Wiemer
+[core]
+	excludesfile = ~/.gitignore_global
+[init]
+    defaultBranch = main
+[alias]
+	unstage = reset HEAD --
+	discard = checkout --
+	co = checkout
+	ci = commit
+	last = log -1 HEAD
+    st = status
+    fixup = commit --amend --no-edit
+    ll = log --format='format:%Cred%h %Cgreen%ci %Cblue%an %Creset%s'
+[advice]
+    skippedCherryPicks = false
+# see https://stackoverflow.com/questions/5343068/is-there-a-way-to-cache-github-credentials-for-pushing-commits/18362082#18362082 for details
+[credential]
+    helper = netrc -f /home/og6xk9f/.netrc.gpg
+[delta]
+    light = true
+    side-by-side = true
+
