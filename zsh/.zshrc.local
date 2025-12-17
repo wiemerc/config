@@ -26,3 +26,6 @@ if type brew &>/dev/null; then
     compinit
 fi
 
+# home- or work-related configuration, only one file should exist
+[[ -f ~/.zshrc.home ]] && source ~/.zshrc.home
+[[ -f ~/.zshrc.work ]] && source ~/.zshrc.work

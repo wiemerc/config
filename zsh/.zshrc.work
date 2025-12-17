@@ -1,0 +1,14 @@
+# some aliases
+alias git-unlock='gpg -d --batch ~/.netrc.gpg > /dev/null 2>&1'
+alias export-creds='eval $(gpg -d --batch ~/credentials.sh.gpg 2> /dev/null)'
+alias kc=kubectl
+alias fcp-lab-dev-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube'
+alias fcp-lab-dev-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-tra'
+alias fcp-lab-dev-int-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-par'
+alias fcp-lab-dev-tra-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-lab-dev-kube-tra-par'
+alias fcp-dev-dev-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-dev-dev-kube'
+alias fcp-dev-dev-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-dev-dev-kube-tra'
+alias fcp-prod-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube'
+alias fcp-prod-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra'
+alias fcp-prod-int-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-par'
+alias fcp-prod-tra-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra-par'
