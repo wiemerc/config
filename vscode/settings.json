@@ -36,14 +36,6 @@
     },
     "remote.SSH.showLoginTerminal": true,
     "remote.SSH.useLocalServer": false,
-    "spellright.documentTypes": [
-        "markdown",
-        "latex"
-    ],
-    "spellright.language": [
-        "en",
-        "de"
-    ],
     "vim.handleKeys": {
         "<C-a>": false,
         "<C-d>": true,
