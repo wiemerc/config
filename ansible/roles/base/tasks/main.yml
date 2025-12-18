@@ -1,26 +1,9 @@
 
 ---
-- name: Install basic packages
+- name: Install packages
   ansible.builtin.package:
     name: "{{ item }}"
-  loop:
-    - bind-utils  # dig
-    - git  # must be installed before, just for documentation
-    - jq
-    - netcat
-    - pinentry  # for GnuPG
-    - python3-pip  # must be installed before, just for documentation
-    - sqlite  # for ZSH history
-    - vim
-    - wireshark-cli  # tshark
-    - zsh
-    # podman or docker.io
-    # TODO: Should we install the ones below in the 'allianz' role?
-    # kubectl
-    # helm
-    # k9s
-    # restic
-    # awscli2
+  loop: "{{ common_packages + group_packages }}"
 
 - name: Install basic Python modules for the user
   become: false
@@ -55,11 +38,12 @@
     - .zshrc
     - .zshrc.local
     # TODO: Don't hard-code 'home' and 'work' but use the group, like with the Git files below. But this would mean that all files need to exist n times, even if just as links.
-    - .zshrc.home
+    # - .zshrc.home
     - .zshrc.work
   # manual: `p10k configure` or `exec zsh`
 
-  # TODO: Create a generic task for all config files
+  # TODO: Create a generic task for all config files, also vim and VS Code
+  # TODO: Should we use GNU Stow for this?
 - name: Create links to config files for Git
   ansible.builtin.file:
     src: /home/{{ ansible_user }}/config/git/{{ item + "." + group_names[0] }}

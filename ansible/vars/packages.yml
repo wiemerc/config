@@ -1,0 +1,12 @@
+---
+common_packages:
+  - bind-utils  # dig
+  - git  # must be installed before, just for documentation
+  - jq
+  - netcat
+  - python3-pip  # must be installed before, just for documentation
+  - sqlite  # for ZSH history
+  - vim
+  - wireshark-cli  # tshark
+  - zsh
+  # podman or docker.io
