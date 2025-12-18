@@ -29,6 +29,7 @@
   loop:
     - ansible  # must be installed before, just for documentation
     - colout
+    - ipython
     - jc
     - loguru
     - requests
@@ -79,3 +80,4 @@
     mode: 0755
 
   # TODO: add alias 'cwcurl'
+  # TODO: Set up GPG agent
