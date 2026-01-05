@@ -1,0 +1,7 @@
+---
+ansible_user: mvhs
+group_roles:
+  - base
+group_packages:
+  - pv  # for the demos
+group_py_modules: []

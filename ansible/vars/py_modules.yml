@@ -1,0 +1,8 @@
+---
+common_py_modules:
+  - ansible  # must be installed before, just for documentation
+  - colout
+  - ipython
+  - jc
+  - loguru
+  - requests

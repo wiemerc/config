@@ -1,2 +1,10 @@
 ---
-  remote_user: consti
+ansible_user: consti
+group_roles:
+  - base
+  - workstation
+group_packages:
+  - nodejs  # for generating the slides
+  - sqlite  # for ZSH history
+  - zsh
+group_py_modules: []

@@ -1,8 +1,11 @@
-- name: Set up a (Fedora) Linux VM for personal use
+- name: Set up a (Fedora) Linux VM
   hosts: all
   become: true
+  vars:
+    ansible_connection: local
   vars_files:
     - vars/packages.yml
+    - vars/py_modules.yml
   tasks:
     - name: Execute roles defined for the group the host is a member of
       ansible.builtin.include_role:

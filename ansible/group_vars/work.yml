@@ -1,8 +1,8 @@
 ---
-ansible_connection: local
 ansible_user: og6xk9f
 group_roles:
   - base
+  - workstation
 group_packages:
   - awscli2
   - helm
@@ -10,3 +10,6 @@ group_packages:
   - kubernetes1.34-client
   - pinentry  # for GnuPG
   - restic
+  - sqlite  # for ZSH history
+  - zsh
+group_py_modules: []
