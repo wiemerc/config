@@ -43,3 +43,7 @@
     owner: "{{ ansible_user }}"
     group: "{{ ansible_user }}"
     mode: 0755
+
+- name: Create links to config files for bash and vim
+  become: false
+  ansible.builtin.shell: rm -f ~/.bashrc && stow --dir ~/config --target ~ bash vim

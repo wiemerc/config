@@ -6,6 +6,7 @@ common_packages:
   - kernel-devel-{{ ansible_facts["kernel"] }}  # for Sysdig
   - netcat
   - python3-pip  # must be installed before, just for documentation
+  - stow  # for the config files
   - vim
   - wireshark-cli  # tshark
   - podman
