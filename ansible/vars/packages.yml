@@ -3,8 +3,9 @@ common_packages:
   - bind-utils  # dig
   - git  # must be installed before, just for documentation
   - jq
-  - kernel-devel-{{ ansible_facts["kernel"] }}  # for Sysdig
+  - kernel-devel-matched  # for Sysdig
   - netcat
+  - openssl
   - pv  # for the demos
   - python3-pip  # must be installed before, just for documentation
   - stow  # for the config files
