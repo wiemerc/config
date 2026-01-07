@@ -12,3 +12,7 @@ alias fcp-prod-int-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube
 alias fcp-prod-tra-fra='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra'
 alias fcp-prod-int-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-par'
 alias fcp-prod-tra-par='export KUBECONFIG=/home/og6xk9f/.kube-sso/e2em-prod-kube-tra-par'
+
+kube_tail() {
+    kubectl logs -f --ignore-errors -l app="$1"
+}

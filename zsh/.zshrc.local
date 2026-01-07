@@ -26,6 +26,8 @@ if type brew &>/dev/null; then
     compinit
 fi
 
-# home- or work-related configuration, only one file should exist
-[[ -f ~/.zshrc.home ]] && source ~/.zshrc.home
-[[ -f ~/.zshrc.work ]] && source ~/.zshrc.work
+cwcurl() {
+    curl -v --no-progress-meter -o /dev/null $@ 2>&1 | grep -Pv '^[{}]' | colout '^>.+' '#258209' | colout '^<.+' '#094682' | colout '^\*.+' blue
+}
+
+[[ -f ~/.zshrc.group ]] && source ~/.zshrc.group
