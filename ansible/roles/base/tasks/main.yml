@@ -47,4 +47,4 @@
 
 - name: Create links to config files for bash and vim
   become: false
-  ansible.builtin.shell: rm -f ~/.bashrc && stow --dir ~/config --target ~ bash vim
+  ansible.builtin.shell: rm -f ~/.bashrc ~/.bash_profile && stow --dir ~/config --target ~ bash vim
