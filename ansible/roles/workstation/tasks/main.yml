@@ -5,34 +5,26 @@
     name: "{{ ansible_user }}"
     shell: /usr/bin/zsh
 
-  # TODO: Install plugins and configure ZSH
+  # TODO: Install plugins for ZSH
   # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
   # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   # git clone https://github.com/larkery/zsh-histdb $HOME/.oh-my-zsh/custom/plugins/zsh-histdb
-- name: Create links to config files for ZSH
-  ansible.builtin.file:
-    src: /home/{{ ansible_user }}/config/zsh/{{ item }}
-    dest: /home/{{ ansible_user }}/{{ item }}
-    state: link
-    force: true
-  loop:
-    - .zprofile
-    - .zshrc
-    - .zshrc.local
-    # TODO: Don't hard-code 'home' and 'work' but use the group, like with the Git files below. But this would mean that all files need to exist n times, even if just as links.
-    # - .zshrc.home
-    - .zshrc.work
-  # manual: `p10k configure` or `exec zsh`
 
-  # TODO: Create a generic task for all config files, also vim and VS Code
-  # TODO: Should we use GNU Stow for this?
-- name: Create links to config files for Git
+- name: Create links to config files for ZSH, Git, SSH and GDB
+  become: false
+  # TODO: Can we add ~/.p10k.zsh?
+  # TODO: Add a tag to this and the next task so that we can use the playbook also on a Mac
+  ansible.builtin.shell: rm -rf ~/.zshrc && stow --dir ~/config --target ~ --ignore '\.home|work|mvhs' gdb git ssh zsh
+
+- name: Create links to group-specific config files for ZSH, Git and SSH
+  become: false
   ansible.builtin.file:
-    src: /home/{{ ansible_user }}/config/git/{{ item + "." + group_names[0] }}
-    dest: /home/{{ ansible_user }}/{{ item }}
+    src: "{{ item.file + group_names[0] }}"
+    dest: "{{ '~/config/' + item.dir + item.file + 'group' }}"
     state: link
     force: true
   loop:
-    - .gitconfig
-    - .gitignore_global
+    - {"dir": "git/", "file": ".gitconfig."}
+    - {"dir": "ssh/.ssh/", "file": "config."}
+    - {"dir": "zsh/", "file": ".zshrc."}
