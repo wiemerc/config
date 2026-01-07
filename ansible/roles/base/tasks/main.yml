@@ -21,6 +21,7 @@
     mode: 0755
 
 - name: Install DuckDB
+  become: false
   shell: curl --fail --silent https://install.duckdb.org | sh
 
 - name: Add Sysdig GPG key
