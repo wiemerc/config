@@ -17,16 +17,23 @@
 - name: Create links to group-specific config files for ZSH, Git and SSH
   become: false
   ansible.builtin.file:
-    src: "{{ item.file + group_names[0] }}"
-    dest: "{{ '~/config/' + item.dir + item.file + 'group' }}"
+    src: "{{ '~/config/' + item.app + item.file + group_names[0] }}"
+    dest: "{{ '~/' + item.file + 'group' }}"
     state: link
     force: true
   loop:
-    - {"dir": "git/", "file": ".gitconfig."}
-    - {"dir": "ssh/.ssh/", "file": "config."}
-    - {"dir": "zsh/", "file": ".zshrc."}
+    - {"app": "git/", "file": ".gitconfig."}
+    - {"app": "ssh/", "file": ".ssh/config."}
+    - {"app": "zsh/", "file": ".zshrc."}
 
 - name: Set ZSH as shell
   ansible.builtin.user:
     name: "{{ ansible_user }}"
     shell: /usr/bin/zsh
+
+# TODO: Where can we add the Zscaler root CA cert? Ideally this would be done in a 'work' role that doesn't exist yet. But it would
+# also need to be done before anything is downloaded in the 'base' role. These are th necessary steps:
+# - `openssl s_client -host heise.de -port 443 -showcerts`
+# - copy certificate
+# - `cat | sudo tee /etc/pki/ca-trust/source/anchors/Zscaler_Root_CA.pem`
+# - `sudo update-ca-trust`
