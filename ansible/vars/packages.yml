@@ -5,6 +5,7 @@ common_packages:
   - jq
   - kernel-devel-{{ ansible_facts["kernel"] }}  # for Sysdig
   - netcat
+  - pv  # for the demos
   - python3-pip  # must be installed before, just for documentation
   - stow  # for the config files
   - vim
