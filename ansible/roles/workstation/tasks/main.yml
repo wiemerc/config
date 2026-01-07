@@ -1,19 +1,16 @@
 
 ---
-- name: Set zsh as shell
-  ansible.builtin.user:
-    name: "{{ ansible_user }}"
-    shell: /usr/bin/zsh
-
-  # TODO: Install plugins for ZSH
-  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  # git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
-  # git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  # git clone https://github.com/larkery/zsh-histdb $HOME/.oh-my-zsh/custom/plugins/zsh-histdb
+- name: Install plugins for ZSH
+  become: false
+  ansible.builtin.shell: |
+    rm -rf ~/.oh-my-zsh
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    git clone https://github.com/larkery/zsh-histdb ~/.oh-my-zsh/custom/plugins/zsh-histdb
 
 - name: Create links to config files for ZSH, Git, SSH and GDB
   become: false
-  # TODO: Can we add ~/.p10k.zsh?
   # TODO: Add a tag to this and the next task so that we can use the playbook also on a Mac
   ansible.builtin.shell: rm -rf ~/.zshrc && stow --dir ~/config --target ~ --ignore '\.home|work|mvhs' gdb git ssh zsh
 
@@ -28,3 +25,8 @@
     - {"dir": "git/", "file": ".gitconfig."}
     - {"dir": "ssh/.ssh/", "file": "config."}
     - {"dir": "zsh/", "file": ".zshrc."}
+
+- name: Set ZSH as shell
+  ansible.builtin.user:
+    name: "{{ ansible_user }}"
+    shell: /usr/bin/zsh
