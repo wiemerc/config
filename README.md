@@ -1,11 +1,3 @@
-# Miscellaneous configuration files
+# Ansible playbook and miscellaneous configuration files
 
-This repository contains just a bunch of configuration files (e. g. for bash and vim) that I like to have everywhere I work. They are organized into sub-directories so I can use _GNU Stow_ to install them (see <http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html> for details). To get me set up on a new machine, I just need to do the following steps:
-
-* install _GNU Stow_
-* create a directory `config` in my home directory and change into it  
-    `mkdir config && cd config`
-* clone this repository  
-    `git clone https://github.com/wiemerc/config.git .`
-* install the files  
-    `stow bash git screen ssh vim`
+This repository used to contain just a bunch of configuration files (e. g. for ZSH and Git) that I like to have everywhere I work. Now in addition there is a whole Ansible playbook to completely set up a new Linux (Fedora) machine. The configuration files are organized into sub-directories so I can use _GNU Stow_ to install them (see <http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html> for details). To get me set up on a new machine, I just need to run the script `setup.sh`.
