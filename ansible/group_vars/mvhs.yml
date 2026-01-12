@@ -2,5 +2,6 @@
 ansible_user: mvhs
 group_roles:
   - base
-group_packages: []
+group_packages:
+  - cowsay  # for the game
 group_py_modules: []
