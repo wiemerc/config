@@ -4,9 +4,13 @@ common_packages:
   - git  # must be installed before, just for documentation
   - jq
   - kernel-devel-matched  # for Sysdig
+  - libxml2-devel  # to install the lxml Python module
+  - libxslt-devel
   - netcat
+  - nodejs  # TODO: Should we use a specific version?
   - openssl
   - pv  # for the demos
+  - python3-devel  # to build any Python modules written in C
   - python3-pip  # must be installed before, just for documentation
   - stow  # for the config files
   - vim
