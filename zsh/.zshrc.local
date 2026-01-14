@@ -19,6 +19,9 @@ WORDCHARS='*?~=&;!#$%^[](){}<>'
 autoload -Uz select-word-style
 select-word-style normal
 
+# make Ctrl-u behave like in bash
+bindkey '^U' backward-kill-line
+
 # add auto-completions provided by Homebrew on a Mac
 if type brew &>/dev/null; then
     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
