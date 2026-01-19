@@ -29,6 +29,8 @@ if type brew &>/dev/null; then
     compinit
 fi
 
+alias pl='ps -o user,pid,ppid,lstart,stat,vsz,rsz,%cpu,%mem,args'
+
 cwcurl() {
     curl -v --no-progress-meter -o /dev/null $@ 2>&1 | grep -Pv '^[{}]' | colout '^>.+' '#258209' | colout '^<.+' '#094682' | colout '^\*.+' blue
 }
