@@ -1,6 +1,7 @@
 ---
 common_packages:
   - bind-utils  # dig
+  - curl
   - git  # must be installed before, just for documentation
   - jq
   - kernel-devel-matched  # for Sysdig
