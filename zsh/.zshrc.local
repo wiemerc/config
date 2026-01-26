@@ -15,7 +15,7 @@ source $HOME/.oh-my-zsh/custom/plugins/zsh-histdb/sqlite-history.zsh
 autoload -Uz add-zsh-hook
 
 # configure what a "word" means
-WORDCHARS='*?~=&;!#$%^[](){}<>'
+WORDCHARS='*?~&;!#$%^'
 autoload -Uz select-word-style
 select-word-style normal
 
