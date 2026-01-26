@@ -1,5 +1,8 @@
 
 ---
+- name: Set SELinux to permissive mode
+  ansible.builtin.command: setenforce 0
+
 - name: Install packages
   ansible.builtin.package:
     name: "{{ item }}"
@@ -22,7 +25,7 @@
 
 - name: Install DuckDB
   become: false
-  shell: curl --fail --silent https://install.duckdb.org | sh
+  ansible.builtin.shell: curl --fail --silent https://install.duckdb.org | sh
 
 - name: Add Sysdig GPG key
   command: rpm --import https://download.sysdig.com/DRAIOS-GPG-KEY.public
