@@ -1,8 +1,8 @@
 if [ -f ~/.bashrc ]; then
     . ~/.bashrc
 fi
-if [ -f /opt/local/etc/profile.d/bash_completion.sh ]; then
-    . /opt/local/etc/profile.d/bash_completion.sh
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    . /usr/share/bash-completion/bash_completion
 fi
 cat <<'END'
 
