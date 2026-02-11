@@ -19,6 +19,9 @@ WORDCHARS='*?~&;!#$%^'
 autoload -Uz select-word-style
 select-word-style normal
 
+# don't remove the space before a pipe symbol if the command / path before is auto-completed
+ZLE_REMOVE_SUFFIX_CHARS=
+
 # make Ctrl-u behave like in bash
 bindkey '^U' backward-kill-line
 
