@@ -1,6 +1,7 @@
 ---
 common_packages:
   - bind-utils  # dig
+  - cloc
   - curl
   - git  # must be installed before, just for documentation
   - jq
@@ -14,6 +15,7 @@ common_packages:
   - python3-devel  # to build any Python modules written in C
   - python3-pip  # must be installed before, just for documentation
   - stow  # for the config files
+  - tmux
   - vim
   - wireshark-cli  # tshark
   - podman
