@@ -7,6 +7,9 @@ export PATH="/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:$HOME/.local/bin:$PA
 export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
 export NODE_OPTIONS=--use-system-ca
 
+if [[ -z "$TMUX" ]]; then
+    exec tmux
+fi
 cat <<'END'
 
                            ,---.
