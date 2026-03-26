@@ -40,4 +40,4 @@
 # - `sudo update-ca-trust`
 # TODO: Additional tasks for a 'work' role:
 # - Install Allianz root / intermediate CA certs
-# - Download `promtool` from Artifactory
+# - Download `promtool` and `vault` from Artifactory
