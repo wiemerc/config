@@ -34,6 +34,7 @@ fi
 
 # aliases / functions
 alias ll='lsd -l'
+alias pm=podman
 alias psl='ps -o user,pid,ppid,lstart,state,vsz,rsz,%cpu,%mem,args'
 
 cwcurl() {
