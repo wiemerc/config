@@ -1,4 +1,5 @@
 export EDITOR=vim
+export BROWSER="/mnt/c/PROGRA~2/Microsoft/Edge/Application/msedge.exe"
 export FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
 export LC_ALL=en_US.UTF-8
 export LESS='-F -R'
