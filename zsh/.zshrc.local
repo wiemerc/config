@@ -27,7 +27,7 @@ bindkey '^U' backward-kill-line
 
 # add auto-completions provided by Homebrew on a Mac
 if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$(brew --prefix)/share/zsh-completions:$FPATH
     autoload -Uz compinit
     compinit
 fi

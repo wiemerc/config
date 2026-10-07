@@ -1,12 +1,3 @@
-export EDITOR=vim
-export BROWSER="/mnt/c/PROGRA~2/Microsoft/Edge/Application/msedge.exe"
-export FPATH="/opt/homebrew/share/zsh/site-functions:$FPATH"
-export LC_ALL=en_US.UTF-8
-export LESS='-F -R'
-export PAGER='less -F -R'
-export PATH="/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin:$HOME/bin:$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
-export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
-export NODE_OPTIONS=--use-system-ca
 
 if [[ -z "$TMUX" ]]; then
     exec tmux
